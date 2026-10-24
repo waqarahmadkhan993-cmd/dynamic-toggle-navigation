@@ -1,0 +1,357 @@
+
+/* 1. Basic setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #0b1120;
+    --surface: #131d31;
+    --text: #f1f5f9;
+    --muted: #a6b3c7;
+    --accent: #5eead4;
+    --border: #26364e;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* 2. Navigation bar */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(11, 17, 32, 0.95);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+}
+
+.navbar {
+    max-width: 1150px;
+    min-height: 76px;
+    margin: auto;
+    padding: 15px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--text);
+    font-size: 27px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-link {
+    display: block;
+    padding: 10px 16px;
+    color: var(--muted);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: color 0.25s ease,
+                background 0.25s ease,
+                transform 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent);
+    background: rgba(94, 234, 212, 0.09);
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+}
+
+/* 3. Hamburger button */
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    margin: 5px 0;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* 4. Hero section */
+.hero {
+    max-width: 1150px;
+    min-height: 560px;
+    margin: auto;
+    padding: 90px 24px;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.15;
+    margin-bottom: 22px;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.description {
+    max-width: 540px;
+    color: var(--muted);
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 9px;
+    background: var(--accent);
+    color: #09201f;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* 5. Hero information card */
+.hero-card {
+    padding: 34px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: linear-gradient(145deg, #182740, #10192b);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon {
+    color: var(--accent);
+    font-size: 38px;
+    margin-bottom: 16px;
+}
+
+.hero-card h2 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.hero-card p,
+.feature-card p,
+.about p,
+.contact p {
+    color: var(--muted);
+}
+
+.status {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--accent);
+}
+
+.status span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+/* 6. Features */
+.features,
+.about,
+.contact {
+    max-width: 1150px;
+    margin: auto;
+    padding: 75px 24px;
+}
+
+.features > h2,
+.about h2,
+.contact h2 {
+    font-size: clamp(28px, 4vw, 38px);
+    margin-bottom: 28px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    padding: 26px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 16px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.feature-icon {
+    color: var(--accent);
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+}
+
+.about,
+.contact {
+    border-top: 1px solid var(--border);
+}
+
+.contact .cta-button {
+    margin-top: 22px;
+}
+
+.footer {
+    padding: 26px 20px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* 7. Tablet and mobile layouts */
+@media (max-width: 768px) {
+    .navbar {
+        min-height: 70px;
+        padding: 12px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding: 0 20px;
+        background: #0b1120;
+        border-bottom: 1px solid var(--border);
+        max-height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        transition: max-height 0.35s ease,
+                    padding 0.35s ease,
+                    opacity 0.25s ease,
+                    visibility 0.35s ease;
+    }
+
+    .nav-links.show {
+        max-height: 320px;
+        padding: 16px 20px 22px;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .nav-link {
+        padding: 12px 14px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 65px 22px;
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features,
+    .about,
+    .contact {
+        padding: 55px 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
