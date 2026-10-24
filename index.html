@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A responsive navigation menu built with HTML, CSS and JavaScript.">
+    <title>NovaNav | Responsive Navigation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="#home" class="logo">Nova<span>Nav</span></a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navLinks"
+                type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="eyebrow">FRONTEND DEVELOPMENT PROJECT</p>
+                <h1>Navigation Made <span>Simple.</span></h1>
+                <p class="description">
+                    Explore a clean, responsive and interactive navigation
+                    experience built with HTML, CSS and JavaScript.
+                </p>
+                <a href="#features" class="cta-button">Explore Features &rarr;</a>
+            </div>
+
+            <div class="hero-card">
+                <div class="card-icon">✦</div>
+                <h2>Designed for Everyone</h2>
+                <p>Beautiful layouts. Smooth transitions. Mobile-friendly design.</p>
+                <div class="status"><span></span> All systems ready</div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <p class="eyebrow">WHAT MAKES IT SPECIAL</p>
+            <h2>Built with Core UI Skills</h2>
+
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">◈</div>
+                    <h3>Responsive Layout</h3>
+                    <p>Adapts to mobile, tablet and desktop screens.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">↗</div>
+                    <h3>Smooth Animation</h3>
+                    <p>Enjoy clean transitions and interactive hover states.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">⌘</div>
+                    <h3>DOM Interactivity</h3>
+                    <p>JavaScript controls the menu and active navigation links.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <h2>Simple code. Better experience.</h2>
+            <p>This project demonstrates the fundamentals of modern frontend development.</p>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>Let's build something great.</h2>
+            <p>Thanks for exploring NovaNav.</p>
+            <a href="#home" class="cta-button">Back to Top ↑</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 NovaNav | Frontend Development Project</p>
+        <p>Built by Waqar Ahmad Khan</p>
+    </footer>
+
+</body>
+</html>
